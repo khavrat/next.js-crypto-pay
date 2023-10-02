@@ -2,12 +2,12 @@
 
 import { Hero } from "@/components/hero/Hero";
 import { ThemeToggler } from "@/components/ThemeToggler";
-import { isThemeDark } from "@/utils/changeTheme";
+import { isUserThemeDark } from "@/utils/changeTheme";
 import { useLayoutEffect } from "react";
 
 export default function Home() {
   useLayoutEffect(() => {
-    isThemeDark();
+    isUserThemeDark();
   }, []);
 
   return (
