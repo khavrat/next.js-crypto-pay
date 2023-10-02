@@ -1,0 +1,5 @@
+html[data-theme="light"] {
+--color-body: #FFFFFF;
+--color-usecases: #232328;
+--color-features: #F7F9FB;
+}

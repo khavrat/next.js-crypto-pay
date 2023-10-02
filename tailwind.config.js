@@ -1,0 +1,54 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {
+      screens: {
+        sm: "375px",
+        md: "768px",
+        lg: "1600px",
+      },
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: "16px",
+          sm: "20px",
+          md: "36px",
+          lg: "200px",
+        },
+      },
+      colors: {
+        bodyColor: "var(--color-body)",
+        usecasesColor: "var(--color-usecases)",
+        featuresColor: "var(--color-features)",
+        blackColor: "#0D0D12",
+        blueColor: "#41A4DF",
+        wightColor: "#FFFFFF",
+        hoverColor: "297EE2",
+        pinkGradient: "linear-gradient(340deg, #FAACA8 8.42%, #DDD6F3 91.45%)",
+        yellowGradient:
+          "linear-gradient(207deg, #FCB69F 6.91%, #FFECD2 92.45%)",
+        blueGradient: "linear-gradient(0deg, #C2E9FB -16.6%, #A1C4FD 106.15%)",
+        purpleGradient:
+          "linear-gradient(297deg, #8EC5FC 8.25%, #E0C3FC 91.76%)",
+      },
+      fontFamily: {
+        sans: ["Inter", "Arial", "sans-serif"],
+        pic: ["SF Pro Display", "sans-serif"],
+      },
+      fontWeight: {
+        semibold: "629",
+      },
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
+    },
+  },
+  plugins: [],
+};
