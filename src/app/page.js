@@ -1,9 +1,10 @@
 "use client";
-
-import { Hero } from "@/components/hero/Hero";
-import { ThemeToggler } from "@/components/ThemeToggler";
-import { isUserThemeDark } from "@/utils/changeTheme";
 import { useLayoutEffect } from "react";
+
+import { ThemeToggler } from "@/components/ThemeToggler";
+import { Hero } from "@/components/hero/Hero";
+import { CaruselSlider } from "@/components/carusel/CaruselSlider";
+import { isUserThemeDark } from "@/utils/changeTheme";
 
 export default function Home() {
   useLayoutEffect(() => {
@@ -11,9 +12,10 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="min-h-screen">
       <ThemeToggler />
       <Hero />
+      <CaruselSlider/>
     </main>
   );
 }
