@@ -25,6 +25,12 @@ module.exports = {
         bodyColor: "var(--color-body)",
         usecasesColor: "var(--color-usecases)",
         featuresColor: "var(--color-features)",
+        textColor: "var(--color-text)",
+        textButton: "var(--text-button)",
+        bgButton: "var(--bg-button)",
+        hoverButton: "var(--hover-button)",
+        borderButton: "var(--border-button)",
+        hoverBorderBtn: "var(--hover-border-button)",
         blackColor: "#0D0D12",
         blueColor: "#41A4DF",
         wightColor: "#FFFFFF",
@@ -47,6 +53,7 @@ module.exports = {
       fontSize: {
         s: "14px",
         p: "18px",
+        pp: "20px",
         h: "32px",
       },
       backgroundImage: {

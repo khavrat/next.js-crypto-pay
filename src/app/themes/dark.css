@@ -2,4 +2,11 @@ html[data-theme="dark"] {
 --color-body: #0D0D12;
 --color-usecases: #18181D;
 --color-features: #18181D;
+--color-text: #FFFFFF;
+
+--text-button: #FFFFFF;
+--bg-button: transparent;
+--hover-button: transparent;
+--border-button: rgba(255, 255, 255, 0.60);
+--hover-border-button: #FFFFFF;
 }

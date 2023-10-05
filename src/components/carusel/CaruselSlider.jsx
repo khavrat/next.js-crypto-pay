@@ -3,17 +3,34 @@ import Carousel from "react-multi-carousel";
 import Image from "next/image";
 import { CustomDot } from "./CustomDot";
 import { customDotStyles } from "./customDotStyles";
-import { slides } from "./slides";
+import { slides } from "./slides/slides";
 
 export const CaruselSlider = () => {
   const [activeSlide, setActiveSlide] = useState("01");
-  const totalSlides = "0" + (slides.length).toString();
+  let totalSlides = "";
+
+  const totalSlidesToShow = () => {
+    if (slides.length < 10) {
+      return (totalSlides = "0" + slides.length.toString());
+    } else {
+      return (totalSlides = slides.length.toString());
+    }
+  };
 
   const handleSlideChange = (previousSlide, _ref) => {
-    let currentSlideToString = (_ref.currentSlide - 1).toString();
-    let visibleCurrentSlide = "0" + currentSlideToString;
-    _ref.onMove;
-    return setActiveSlide(visibleCurrentSlide);
+    let currentSlide = _ref.currentSlide - 1;
+    // _ref.onMove;
+    if (previousSlide > slides.length) {
+      console.log('previousSlide > slides.length :>> ', previousSlide > slides.length);
+      setActiveSlide("01");
+    } else
+    if (currentSlide < 10) {
+      let visibleCurrentSlide = "0" + currentSlide.toString();
+      setActiveSlide(visibleCurrentSlide);
+    } else {
+      let visibleCurrentSlide = currentSlide.toString();
+      setActiveSlide(visibleCurrentSlide);
+    }
   };
 
   return (
@@ -29,7 +46,7 @@ export const CaruselSlider = () => {
         // containerClass="container"
         customDot={<CustomDot />}
         currentSlide={activeSlide}
-        totalItams={totalSlides}
+        totalItams={totalSlidesToShow()}
         dotListClass={customDotStyles()}
         draggable
         focusOnSelect={false}

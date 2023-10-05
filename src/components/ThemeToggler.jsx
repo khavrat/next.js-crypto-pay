@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export const ThemeToggler = () => {
   const [currentTheme, setCurrentTheme] = useState(
@@ -21,14 +21,14 @@ export const ThemeToggler = () => {
   };
 
   return (
-    <div className="relative inline-block cursor-pointer" onClick={changeTheme}>
+    <div className="fixed top-[100px] lg:top-[120px] inline-block cursor-pointer" onClick={changeTheme}>
       <span
-        className={`absolute top-0 left-0 w-6 h-6 bg-blueColor  shadow-dropShadow rounded-full transform  transition-transform ${
+        className={`absolute top-0 left-0 w-6 h-6 bg-wightColor  shadow-dropShadow rounded-full transform  transition-transform ${
           currentTheme === "dark" ? "translate-x-6" : "translate-x-0"
         }`}
       ></span>
       <button
-        className="inline-block bg-hoverColor shadow-innerShadow rounded-3xl w-11 h-6"
+        className="inline-block bg-blueColor shadow-innerShadow rounded-3xl w-11 h-6"
         type="button"
       ></button>
     </div>

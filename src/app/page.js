@@ -1,7 +1,7 @@
 "use client";
 import { useLayoutEffect } from "react";
 
-import { ThemeToggler } from "@/components/ThemeToggler";
+import { Header } from '@/components/header/Header';
 import { Hero } from "@/components/hero/Hero";
 import { CaruselSlider } from "@/components/carusel/CaruselSlider";
 import { isUserThemeDark } from "@/utils/changeTheme";
@@ -12,11 +12,13 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-screen">
-      <ThemeToggler />
-      <Hero />
-      <CaruselSlider/>
-    </main>
+    <>
+      <Header />
+      <main className="min-h-screen">
+        <Hero />
+        <CaruselSlider />
+      </main>
+    </>
   );
 }
 

@@ -1,11 +1,9 @@
 import Image from "next/image";
-import firstSlideImg from "../../images/slides/firstSlideImg.png"
+import firstSlideImg from "../../../images/slides/firstSlideImg.png"
+import { SlideBtn } from "./SlideBtn";
+import { Button } from "@/components/reusableComponents/Button";
 
-export const SlideEl = () => {
-    const qwe = () => {
-        console.log('this is click')
-}
-
+export const Slide1 = () => {
   return (
     <div className="px-5 py-8 my-8 flex flex-col items-center justify-center pointer-events-none">
       <div className="flex items-center justify-center bg-pinkGradient w-[335px] h-[335px] rounded-3xl align-middle">
@@ -27,13 +25,15 @@ export const SlideEl = () => {
             Immediately deliver digital products and services to your users.
           </p>
         </div>
-        <button
-          type="button"
-          onClick={qwe}
-          className="inline-flex justify-center items-center rounded-full w-full max-w-[335px] px-8 py-3 bg-blueColor hover:bg-hoverColor text-wightColor text-p leading-[1.2] font-medium cursor-pointer pointer-events-auto"
-        >
-          Open API Docs
-        </button>
+        <Button
+          nameButton="Open API Docs"
+          bgColor="bg-blueColor"
+          textColor="text-wightColor"
+          width="w-full"
+          border="border-0"
+          hoverStyles="hover:bg-hoverColor hover:text-wightColor hover:border-0"
+        />
+        <SlideBtn />
       </div>
     </div>
   );
