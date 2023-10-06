@@ -1,15 +1,30 @@
+import { useTheme } from "@/contexts/ThemeContext";
 import Image from "next/image";
-import heroImaging from '../../images/heroImaging.png'
+import heroImgDark from "../../../public/hero/heroImgDark.png";
+import heroImgLight from "../../../public/hero/heroImgLight.png";
 
 export const HeroImaging = () => {
+  const { currentTheme } = useTheme();
+
   return (
-      <Image
-        src={heroImaging}
-        alt="presentation illustration"
-        className="dark:invert"
-        width={328.211}
-        height={688.598}
-        priority
-      />
+    <div className="flex items-center justify-center">
+      {currentTheme === "dark" ? (
+        <Image
+          src={heroImgDark}
+          alt="screen"
+          quality={100}
+          className="w-[302px] md:w-[328px]"
+          priority
+        />
+      ) : (
+        <Image
+          src={heroImgLight}
+          alt="screen"
+          quality={100}
+          className="w-[302px] md:w-[328px]"
+          priority
+        />
+      )}
+    </div>
   );
 };

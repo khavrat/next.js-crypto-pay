@@ -1,5 +1,5 @@
 import Image from "next/image";
-import thirdSlideImg from "../../../images/slides/thirdSlideImg.png";
+import thirdSlideImg from "../../../../public/slides/thirdSlideImg.png";
 import { SlideBtn } from "./SlideBtn";
 
 export const Slide3 = () => {

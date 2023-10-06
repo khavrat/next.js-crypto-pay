@@ -1,6 +1,6 @@
 export const isUserThemeDark = () => {
   if (
-    localStorage.theme === "dark" || 
+    localStorage.theme === "dark" ||
     (!("theme" in localStorage) &&
       window.matchMedia("(prefers-color-scheme: dark)").matches)
   ) {

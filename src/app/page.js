@@ -1,7 +1,8 @@
 "use client";
 import { useLayoutEffect } from "react";
+import { ThemeProvider } from "@/contexts/ThemeContext";
 
-import { Header } from '@/components/header/Header';
+import { Header } from "@/components/header/Header";
 import { Hero } from "@/components/hero/Hero";
 import { CaruselSlider } from "@/components/carusel/CaruselSlider";
 import { isUserThemeDark } from "@/utils/changeTheme";
@@ -12,13 +13,13 @@ export default function Home() {
   }, []);
 
   return (
-    <>
+    <ThemeProvider>
       <Header />
       <main className="min-h-screen">
         <Hero />
         <CaruselSlider />
       </main>
-    </>
+    </ThemeProvider>
   );
 }
 

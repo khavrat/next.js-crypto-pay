@@ -55,6 +55,8 @@ module.exports = {
         p: "18px",
         pp: "20px",
         h: "32px",
+        hh: "46px",
+        m: "80px",
       },
       backgroundImage: {
         pinkGradient: "linear-gradient(340deg, #FAACA8 8.42%, #DDD6F3 91.45%)",

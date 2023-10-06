@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useTheme } from "@/contexts/ThemeContext";
 
 export const ThemeToggler = () => {
-  const [currentTheme, setCurrentTheme] = useState(
-    localStorage?.theme || "light"
-  );
+  // const [currentTheme, setCurrentTheme] = useState(
+  //   localStorage?.theme || "light"
+  // );
+  const {currentTheme, setCurrentTheme}=useTheme()
 
   const changeTheme = () => {
     if (!("theme" in localStorage)) {

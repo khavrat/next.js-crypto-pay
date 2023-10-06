@@ -1,5 +1,5 @@
 import Image from "next/image";
-import firstSlideImg from "../../../images/slides/firstSlideImg.png"
+import firstSlideImg from "../../../../public/slides/firstSlideImg.png"
 import { SlideBtn } from "./SlideBtn";
 import { Button } from "@/components/reusableComponents/Button";
 
@@ -31,7 +31,8 @@ export const Slide1 = () => {
           textColor="text-wightColor"
           width="w-full"
           border="border-0"
-          hoverStyles="hover:bg-hoverColor hover:text-wightColor hover:border-0"
+          hoverBg="hover:bg-hoverColor"
+          hoverText="hover:text-wightColor"
         />
         <SlideBtn />
       </div>
