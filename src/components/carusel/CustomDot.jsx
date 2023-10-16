@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-const slides = ["1", "2", "3", "4", "5"];
 
 export const CustomDot = ({ active, index, onClick }) => {
   const [isActive, setIsActive] = useState(active);

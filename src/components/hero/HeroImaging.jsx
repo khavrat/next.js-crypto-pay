@@ -7,7 +7,7 @@ export const HeroImaging = () => {
   const { currentTheme } = useTheme();
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="py-[32px] lg:py-[20px] md:mr-[76px] flex items-center justify-center">
       {currentTheme === "dark" ? (
         <Image
           src={heroImgDark}

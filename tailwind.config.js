@@ -10,6 +10,7 @@ module.exports = {
       screens: {
         sm: "375px",
         md: "768px",
+        prelg: "1400px",
         lg: "1600px",
       },
       container: {
@@ -18,6 +19,7 @@ module.exports = {
           DEFAULT: "16px",
           sm: "20px",
           md: "36px",
+          prelg: "100px",
           lg: "200px",
         },
       },

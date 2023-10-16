@@ -19,7 +19,7 @@ export const CaruselSlider = () => {
 
   const handleSlideChange = (previousSlide, _ref) => {
     let currentSlide = _ref.currentSlide - 1;
-    // _ref.onMove;
+    _ref.onMove;
     if (previousSlide > slides.length) {
       console.log('previousSlide > slides.length :>> ', previousSlide > slides.length);
       setActiveSlide("01");
@@ -34,15 +34,15 @@ export const CaruselSlider = () => {
   };
 
   return (
-    <section className="relative">
+    <section className="relative z-[-1]">
       <Carousel
-        additionalTransfrom={0}
-        arrows
+        // additionalTransfrom={0}
+        // arrows
         // autoPlay={true}
         autoPlaySpeed={3000}
         afterChange={handleSlideChange}
         centerMode={false}
-        className="bg-red-800"
+        className=" bg-red-800"
         // containerClass="container"
         customDot={<CustomDot />}
         currentSlide={activeSlide}
@@ -55,14 +55,21 @@ export const CaruselSlider = () => {
         keyBoardControl
         minimumTouchDrag={80}
         pauseOnHover
-        removeArrowOnDeviceType={["desktop", "tablet", "mobile"]}
+        removeArrowOnDeviceType={["desktop", "predesktop", "tablet", "mobile"]}
         // renderArrowsWhenDisabled={false}
         // renderButtonGroupOutside={true}
-        // renderDotsOutside={false}
+        // renderDotsOutside={true}
         responsive={{
           desktop: {
             breakpoint: {
               max: 1600,
+              min: 1400,
+            },
+            items: 1,
+          },
+          predesktop: {
+            breakpoint: {
+              max: 1399,
               min: 769,
             },
             items: 1,
