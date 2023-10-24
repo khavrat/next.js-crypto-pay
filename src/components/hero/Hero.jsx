@@ -9,7 +9,7 @@ export const Hero = () => {
       <div className="container">
         <ThemeToggler />
         <div className="flex justify-between max-md:flex-col ">
-          <div className="max-md:text-center md:py-[80px] z-[-3]">
+          <div className="max-md:text-center md:py-[80px]">
             <h1 className="max-w-[335px] md:max-w-[400px] prelg:max-w-[692px]  text-textColor text-hh prelg:text-m heading-[1.1] font-semibold tracking-[-1.38px] md:tracking-[-2.4px]">
               Crypto payments for
               <span className="text-blueColor"> telegram bots</span>

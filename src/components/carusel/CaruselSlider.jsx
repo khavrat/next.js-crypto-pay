@@ -1,13 +1,24 @@
-import { useState } from "react";
+import { useState, useLayoutEffect, useEffect } from "react";
 import Carousel from "react-multi-carousel";
-import Image from "next/image";
 import { CustomDot } from "./CustomDot";
-import { customDotStyles } from "./customDotStyles";
+import '../../app/caruselStyles/dotList.css'
 import { slides } from "./slides/slides";
 
 export const CaruselSlider = () => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [activeSlide, setActiveSlide] = useState("01");
   let totalSlides = "";
+
+  useLayoutEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
 
   const totalSlidesToShow = () => {
     if (slides.length < 10) {
@@ -21,10 +32,12 @@ export const CaruselSlider = () => {
     let currentSlide = _ref.currentSlide - 1;
     _ref.onMove;
     if (previousSlide > slides.length) {
-      console.log('previousSlide > slides.length :>> ', previousSlide > slides.length);
+      console.log(
+        "previousSlide > slides.length :>> ",
+        previousSlide > slides.length
+      );
       setActiveSlide("01");
-    } else
-    if (currentSlide < 10) {
+    } else if (currentSlide < 10) {
       let visibleCurrentSlide = "0" + currentSlide.toString();
       setActiveSlide(visibleCurrentSlide);
     } else {
@@ -34,20 +47,24 @@ export const CaruselSlider = () => {
   };
 
   return (
-    <section className="relative z-[-1]">
+    <section className="relative">
       <Carousel
-        // additionalTransfrom={0}
-        // arrows
+        additionalTransfrom={0}
+        arrows
         // autoPlay={true}
-        autoPlaySpeed={3000}
+        // autoPlaySpeed={3000}
         afterChange={handleSlideChange}
         centerMode={false}
-        className=" bg-red-800"
-        // containerClass="container"
+        className="bg-red-800 z-[-1] "
+        containerClass="container"
         customDot={<CustomDot />}
         currentSlide={activeSlide}
         totalItams={totalSlidesToShow()}
-        dotListClass={customDotStyles()}
+        dotListClass={
+          windowWidth >= 768
+            ? "react-multi-carousel-dot-list-lg"
+            : "react-multi-carousel-dot-list-sm"
+        }
         draggable
         focusOnSelect={false}
         infinite
@@ -57,8 +74,8 @@ export const CaruselSlider = () => {
         pauseOnHover
         removeArrowOnDeviceType={["desktop", "predesktop", "tablet", "mobile"]}
         // renderArrowsWhenDisabled={false}
-        // renderButtonGroupOutside={true}
-        // renderDotsOutside={true}
+        renderButtonGroupOutside={true}
+        renderDotsOutside={true}
         responsive={{
           desktop: {
             breakpoint: {
@@ -90,7 +107,7 @@ export const CaruselSlider = () => {
           },
         }}
         rewind={true}
-        // rewindWithAnimation={true}
+        rewindWithAnimation={true}
         rtl={false}
         shouldResetAutoplay
         showDots

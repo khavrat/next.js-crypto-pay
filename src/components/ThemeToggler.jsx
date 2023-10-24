@@ -1,10 +1,6 @@
-import { useState } from "react";
 import { useTheme } from "@/contexts/ThemeContext";
 
 export const ThemeToggler = () => {
-  // const [currentTheme, setCurrentTheme] = useState(
-  //   localStorage?.theme || "light"
-  // );
   const {currentTheme, setCurrentTheme}=useTheme()
 
   const changeTheme = () => {
@@ -23,7 +19,7 @@ export const ThemeToggler = () => {
   };
 
   return (
-    <div className="fixed top-[100px] lg:top-[120px] inline-block cursor-pointer" onClick={changeTheme}>
+    <div className="fixed top-[100px] lg:top-[120px] inline-block cursor-pointer z-[5]" onClick={changeTheme}>
       <span
         className={`absolute top-0 left-0 w-6 h-6 bg-wightColor  shadow-dropShadow rounded-full transform  transition-transform ${
           currentTheme === "dark" ? "translate-x-6" : "translate-x-0"

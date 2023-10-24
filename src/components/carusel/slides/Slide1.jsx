@@ -4,7 +4,7 @@ import { SlideBtn } from "./SlideBtn";
 
 export const Slide1 = () => {
   return (
-    <div className=" px-5 py-8 my-8 flex flex-col md:flex-row md:gap-[40px] prelg:gap-[122px] items-center justify-center pointer-events-none">
+    <div className=" px-5 py-8 my-8 flex flex-col md:flex-row md:gap-[40px] prelg:gap-[122px] items-center justify-center md:justify-start  pointer-events-none">
       <div className=" flex items-center justify-center bg-pinkGradient w-[335px] md:w-[488px]  h-[335px] md:h-[488px] rounded-3xl align-middle">
         <Image
           src={firstSlideImg}

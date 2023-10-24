@@ -4,8 +4,8 @@ import { Button } from "../reusableComponents/Button";
 
 export const Header = () => {
   return (
-    <header className=" fixed top-0 left-0 right-0 w-full">
-      <div className="container bg-bodyColor py-[42px] flex align-middle justify-between z-9">
+    <header className=" fixed top-0 left-0 right-0 w-full z-[5] bg-bodyColor">
+      <div className="container  py-[42px] flex align-middle justify-between">
         <Logo />
         <div className="flex justify-end gap-[100px] lg:gap-[239px]">
           <Navigation />
